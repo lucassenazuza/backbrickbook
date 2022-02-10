@@ -1,4 +1,4 @@
-package com.site.backbrickbook.service;
+package com.site.backbrickbook.service.auth;
 
 
 import com.site.backbrickbook.model.User;

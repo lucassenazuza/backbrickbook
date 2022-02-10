@@ -1,10 +1,10 @@
-package com.site.backbrickbook.controller;
+package com.site.backbrickbook.controller.auth;
 
 
 import com.site.backbrickbook.model.User;
 import com.site.backbrickbook.model.dto.UserAutheticatedDTO;
 import com.site.backbrickbook.model.dto.UserRegistrationDTO;
-import com.site.backbrickbook.service.UserRegistrationService;
+import com.site.backbrickbook.service.auth.UserRegistrationService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

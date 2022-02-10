@@ -1,4 +1,4 @@
-package com.site.backbrickbook.service;
+package com.site.backbrickbook.service.auth;
 
 
 
@@ -21,7 +21,7 @@ public class TokenService {
     public String generateToken(User user) {
         return Jwts.builder()
                 .setIssuedAt(new Date(System.currentTimeMillis()))
-                .setSubject("Teste JWT API")
+                .setSubject(user.getEmail())
                 .setExpiration(new Date(System.currentTimeMillis() + expirationTime))
                 .signWith(SignatureAlgorithm.HS256, key)
                 .compact();
