@@ -26,16 +26,25 @@ public class UserAuthenticationService {
         this.tokenService = tokenService;
     }
 
-
-    public User authenticate(DadosLogin dados, String token){
+    public User authenticate(DadosLogin dados){
         User user = userRepository.findByEmail(dados.getEmail()).orElseThrow(ExistingEmailException::new);
-        if(dados.getSenha().equals(user.getSenha()) && !token.isEmpty() && validate(token)) {
+        if(dados.getPassword().equals(user.getPassword())) {
             return user;
         }
         else {
             throw new InvalidLoginException();
         }
     }
+
+//    public User authenticate(DadosLogin dados, String token){
+//        User user = userRepository.findByEmail(dados.getEmail()).orElseThrow(ExistingEmailException::new);
+//        if(dados.getpassword().equals(user.getpassword()) && !token.isEmpty() && validate(token)) {
+//            return user;
+//        }
+//        else {
+//            throw new InvalidLoginException();
+//        }
+//    }
 
     private boolean validate(String token) {
         try {

@@ -9,11 +9,9 @@ import com.site.backbrickbook.service.UserAuthenticationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+@CrossOrigin
 @RestController
 public class AuthenticationController {
 
@@ -29,9 +27,14 @@ public class AuthenticationController {
     }
 
 
-    @PostMapping("/login")
-    public ResponseEntity<UserAutheticatedDTO> autenticar(@RequestBody DadosLogin dadosLogin, @RequestHeader String Authorization){
-        User user = userAuthenticationService.authenticate(dadosLogin, Authorization);
+    @PostMapping("/signin")
+    public ResponseEntity<UserAutheticatedDTO> autenticar(@RequestBody DadosLogin dadosLogin){
+        User user = userAuthenticationService.authenticate(dadosLogin);
         return new ResponseEntity<UserAutheticatedDTO>(UserAutheticatedDTO.toDTO(user, "Bearer "), HttpStatus.ACCEPTED);
     }
+//    @PostMapping("/login")
+//    public ResponseEntity<UserAutheticatedDTO> autenticar(@RequestBody DadosLogin dadosLogin, @RequestHeader String Authorization){
+//        User user = userAuthenticationService.authenticate(dadosLogin, Authorization);
+//        return new ResponseEntity<UserAutheticatedDTO>(UserAutheticatedDTO.toDTO(user, "Bearer "), HttpStatus.ACCEPTED);
+//    }
 }

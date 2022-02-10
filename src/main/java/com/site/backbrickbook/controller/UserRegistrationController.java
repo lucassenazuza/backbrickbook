@@ -11,6 +11,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+
+@CrossOrigin
+@RequestMapping("/register")
 @RestController
 public class UserRegistrationController {
 
@@ -20,9 +23,9 @@ public class UserRegistrationController {
     public UserRegistrationController(UserRegistrationService userRegistrationService){
         this.userRegistrationService = userRegistrationService;
     }
-    @RequestMapping(value = "/register", method = RequestMethod.POST)
+    @PostMapping
     public ResponseEntity<UserAutheticatedDTO> registrate(@RequestBody UserRegistrationDTO userRegistrationDTO){
-        User user = userRegistrationService.registrate(userRegistrationDTO.toUser());
+        User user = userRegistrationService.registrate(userRegistrationDTO.converter());
         return  new ResponseEntity<UserAutheticatedDTO>(UserAutheticatedDTO.toDTO(user, "Bearer "), HttpStatus.CREATED);
     }
 
