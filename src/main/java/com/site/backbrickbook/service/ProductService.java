@@ -13,6 +13,6 @@ public class ProductService {
 
     public ProductDto addProduct(Product product){
         userRepository.save(product);
-        return ProductDto(product);
+        return ProductDto(product)d;
     }
 }
