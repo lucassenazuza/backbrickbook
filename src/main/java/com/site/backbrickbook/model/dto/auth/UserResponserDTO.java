@@ -1,4 +1,4 @@
-package com.site.backbrickbook.model.dto;
+package com.site.backbrickbook.model.dto.auth;
 
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;

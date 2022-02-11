@@ -22,23 +22,22 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+//    @Nullable
+//    @Enumerated(EnumType.ORDINAL)
+//    private Theme theme;
     @Nullable
-    @Enumerated(EnumType.ORDINAL)
-    private Theme theme;
-    @Nullable
-    private String setName;
-    @Nullable
-    private long setNumber;
-    @Nullable
-    private Boolean complete;
-    @Nullable
-    private String description;
+    private String nameSet;
+//    @Nullable
+//    private long setNumber;
+//    @Nullable
+//    private Boolean complete;
+//    @Nullable
+//    private String description;
     LocalDateTime dateInsertion = LocalDateTime.now();
-    @Nullable
-    LocalDateTime dateLastUpdate;
+//    @Nullable
+//    LocalDateTime dateLastUpdate;
     @Nullable
     private Boolean available;
-    @Nullable
     @Lob
     @Column(name="product_img")
     private byte[] productPic;

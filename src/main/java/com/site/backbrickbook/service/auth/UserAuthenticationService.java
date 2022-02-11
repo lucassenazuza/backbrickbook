@@ -6,7 +6,7 @@ import com.site.backbrickbook.exception.ExpiredTokenException;
 import com.site.backbrickbook.exception.InvalidLoginException;
 import com.site.backbrickbook.exception.InvalidTokenException;
 import com.site.backbrickbook.model.User;
-import com.site.backbrickbook.model.dto.DadosLogin;
+import com.site.backbrickbook.model.dto.auth.DadosLogin;
 import com.site.backbrickbook.repository.UserRepository;
 import io.jsonwebtoken.Claims;
 import org.springframework.beans.factory.annotation.Autowired;
