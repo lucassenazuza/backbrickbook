@@ -9,11 +9,9 @@ public class ProductDto {
 
     private long id;
     private String nameSet;
+    private long numberSet;
+    private Boolean complete;
 
-    public ProductDto(Product product){
-        this.id = product.getId();
-        this.nameSet = product.getNameSet();
-    }
 }
 
 
