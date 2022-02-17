@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
-public class UserRegistrationDTO extends User {
+public class UserRegistrationDTO extends UserSystem {
 
     private Long id;
 
