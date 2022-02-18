@@ -2,7 +2,7 @@ package com.site.backbrickbook.service.auth;
 
 
 
-import com.site.backbrickbook.model.User;
+import com.site.backbrickbook.model.UserSystem;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -18,10 +18,10 @@ public class TokenService {
     //30 minutos
     private static final long expirationTime = 1800000;
 
-    public String generateToken(User user) {
+    public String generateToken(UserSystem userSystem) {
         return Jwts.builder()
                 .setIssuedAt(new Date(System.currentTimeMillis()))
-                .setSubject(user.getEmail())
+                .setSubject(userSystem.getEmail())
                 .setExpiration(new Date(System.currentTimeMillis() + expirationTime))
                 .signWith(SignatureAlgorithm.HS256, key)
                 .compact();

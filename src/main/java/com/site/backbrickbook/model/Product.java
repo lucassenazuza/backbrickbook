@@ -1,6 +1,7 @@
 package com.site.backbrickbook.model;
 
 
+import com.site.backbrickbook.model.dto.ProductDto;
 import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -30,6 +31,16 @@ public class Product {
     @Nullable
     LocalDateTime dateLastUpdate;
     private Boolean available;
+    @Nullable
+    @Lob
+    @Basic(fetch = FetchType.LAZY)
+    private byte[] image;
+
+    public ProductDto converte(){
+        return new ProductDto(this.id, this.nameSet, this.numberSet, this.complete);
+    }
+
+
 //    @Lob
 //    @Column(name="product_img")
 //    private byte[] productPic;

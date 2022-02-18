@@ -1,4 +1,4 @@
-package com.site.backbrickbook.model.dto.auth;
+package com.site.backbrickbook.model.dto;
 
 
 import lombok.AllArgsConstructor;

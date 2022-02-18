@@ -1,7 +1,6 @@
-package com.site.backbrickbook.model.dto.auth;
+package com.site.backbrickbook.model.dto;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
-import com.site.backbrickbook.model.User;
 import com.site.backbrickbook.model.UserSystem;
 import lombok.AllArgsConstructor;
 import lombok.Data;

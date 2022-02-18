@@ -1,9 +1,9 @@
-package com.site.backbrickbook.controller.auth;
+package com.site.backbrickbook.controller;
 
 
-import com.site.backbrickbook.model.User;
-import com.site.backbrickbook.model.dto.auth.DadosLogin;
-import com.site.backbrickbook.model.dto.auth.UserAutheticatedDTO;
+import com.site.backbrickbook.model.UserSystem;
+import com.site.backbrickbook.model.dto.DadosLogin;
+import com.site.backbrickbook.model.dto.UserAutheticatedDTO;
 import com.site.backbrickbook.service.auth.UserAuthenticationService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,8 +33,8 @@ public class AuthenticationController {
     @PostMapping("/signin")
     public ResponseEntity<UserAutheticatedDTO> autenticar(@RequestBody DadosLogin dadosLogin){
         LOGGER.info("Logando usuario");
-        User user = userAuthenticationService.authenticate(dadosLogin);
-        return new ResponseEntity<UserAutheticatedDTO>(UserAutheticatedDTO.toDTO(user, "Bearer "), HttpStatus.ACCEPTED);
+        UserSystem userSystem = userAuthenticationService.authenticate(dadosLogin);
+        return new ResponseEntity<UserAutheticatedDTO>(UserAutheticatedDTO.toDTO(userSystem, "Bearer "), HttpStatus.ACCEPTED);
     }
 //    @PostMapping("/login")
 //    public ResponseEntity<UserAutheticatedDTO> autenticar(@RequestBody DadosLogin dadosLogin, @RequestHeader String Authorization){

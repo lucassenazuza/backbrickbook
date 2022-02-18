@@ -5,8 +5,8 @@ import com.site.backbrickbook.exception.ExistingEmailException;
 import com.site.backbrickbook.exception.ExpiredTokenException;
 import com.site.backbrickbook.exception.InvalidLoginException;
 import com.site.backbrickbook.exception.InvalidTokenException;
-import com.site.backbrickbook.model.User;
-import com.site.backbrickbook.model.dto.auth.DadosLogin;
+import com.site.backbrickbook.model.UserSystem;
+import com.site.backbrickbook.model.dto.DadosLogin;
 import com.site.backbrickbook.repository.UserRepository;
 import io.jsonwebtoken.Claims;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,10 +26,10 @@ public class UserAuthenticationService {
         this.tokenService = tokenService;
     }
 
-    public User authenticate(DadosLogin dados){
-        User user = userRepository.findByEmail(dados.getEmail()).orElseThrow(ExistingEmailException::new);
-        if(dados.getPassword().equals(user.getPassword())) {
-            return user;
+    public UserSystem authenticate(DadosLogin dados){
+        UserSystem userSystem = userRepository.findByEmail(dados.getEmail()).orElseThrow(ExistingEmailException::new);
+        if(dados.getPassword().equals(userSystem.getPassword())) {
+            return userSystem;
         }
         else {
             throw new InvalidLoginException();
