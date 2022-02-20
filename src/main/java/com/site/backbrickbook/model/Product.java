@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.lang.Nullable;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.*;
 import java.sql.Blob;
@@ -32,17 +33,10 @@ public class Product {
     LocalDateTime dateLastUpdate;
     private Boolean available;
     @Nullable
-    @Lob
-    @Basic(fetch = FetchType.LAZY)
-    private byte[] image;
-
+    private String file_name;
     public ProductDto converte(){
         return new ProductDto(this.id, this.nameSet, this.numberSet, this.complete);
     }
 
-
-//    @Lob
-//    @Column(name="product_img")
-//    private byte[] productPic;
 
 }
