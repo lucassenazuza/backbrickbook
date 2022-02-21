@@ -5,10 +5,7 @@ import com.site.backbrickbook.model.dto.ProductDto;
 import com.site.backbrickbook.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RequestMapping("/product")
 @RestController
@@ -24,5 +21,12 @@ public class ProductController {
         return ResponseEntity.ok(productService.addProduct(product));
 
     }
-
+    @GetMapping("/{id}")
+    public byte [] productImage(@PathVariable long id){
+        return productService.getProductImage(id);
+    }
+    @GetMapping("/upload")
+    public void upload(){
+         productService.upload();
+    }
 }
