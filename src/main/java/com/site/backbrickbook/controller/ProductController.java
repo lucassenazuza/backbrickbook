@@ -12,6 +12,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
@@ -20,7 +21,6 @@ import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-
 
 @RequestMapping("/product")
 @RestController
@@ -36,4 +36,16 @@ public class ProductController {
         return ResponseEntity.ok(productService.addProduct(imageFile, productForm));
     }
 
+    @GetMapping("/{id}")
+    public byte [] productImage(@PathVariable long id){
+        return productService.getProductImage(id);
+    }
+    @GetMapping("/upload")
+    public void upload(){
+         productService.upload();
+    }
 }
+
+
+}
+
