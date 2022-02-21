@@ -23,7 +23,8 @@ public class ProductService {
     Environment environment;
 
     public ProductDto addProduct(MultipartFile imageFile, ProductForm productForm) {
-        Product product = productForm.converter(imageFile);
+
+        Product product = productForm.converter(imageFile, productRepository);
         productRepository.save(product);
 
         return product.converte();

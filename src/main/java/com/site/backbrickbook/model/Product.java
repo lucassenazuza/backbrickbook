@@ -28,10 +28,11 @@ public class Product {
     private long numberSet;
     private Boolean complete;
     private String description;
+    private Double value;
     LocalDateTime dateInsertion = LocalDateTime.now();
     @Nullable
     LocalDateTime dateLastUpdate;
-    private Boolean available;
+    private Boolean available = Boolean.TRUE;
     @Nullable
     private String file_name;
     public ProductDto converte(){
