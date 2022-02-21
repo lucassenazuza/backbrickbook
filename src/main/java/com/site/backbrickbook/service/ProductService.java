@@ -36,7 +36,7 @@ public class ProductService {
 
     public byte[] getProductImage(long id) {
 
-        String product_pic = productRepository.getById(id).getImage().toString();
+        String product_pic = productRepository.getById(id).getFile_name().toString();
         product_pic = product_pic.replaceFirst("^data:image/[^;]*;base64,?","");
         byte[] bytes = javax.xml.bind.DatatypeConverter.parseBase64Binary(product_pic);
         return bytes;

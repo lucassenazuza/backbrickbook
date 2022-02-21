@@ -11,23 +11,25 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 
-public class Utils  {
+public class Utils {
 
-    public  void checkDir(String path){
+    public void checkDir(String path) {
         File file = new File(path);
-        if(!file.exists()){
+        if (!file.exists()) {
             file.mkdirs();
         }
     }
-    public void saveImage(MultipartFile imageFile, String nameFile) throws IOException {
+
+    public Path saveImage(MultipartFile imageFile, String nameFile) throws IOException {
 
 
-
-        String folder = BatchConfiguration.getProperty("app.path-images");
-        checkDir(folder);
+//        String folder = BatchConfiguration.getProperty("app.path-images");
+        Path folder = Paths.get(System.getProperty("user.dir"), "images_to_upload");
+        checkDir(folder.toString());
         byte[] bytes = imageFile.getBytes();
-        Path path = Paths.get(folder + nameFile);
+        Path path = Paths.get(folder + "\\" + nameFile +".jpg");
         Files.write(path, bytes);
+        return path;
     }
 
 }
