@@ -4,8 +4,8 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
-!src/main/resources/client_secret.json
-!src/main/resources/credentials_smtp.json
+**/src/main/resources/client_secret.json
+**/src/main/resources/credentials_smtp.json
 
 ### STS ###
 .apt_generated
