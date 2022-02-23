@@ -4,6 +4,7 @@ import com.site.backbrickbook.model.Product;
 import com.site.backbrickbook.model.dto.ProductDto;
 import com.site.backbrickbook.model.form.ProductForm;
 import com.site.backbrickbook.service.ProductService;
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import com.sun.org.apache.xpath.internal.operations.Mult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
@@ -29,19 +30,32 @@ public class ProductController {
     private ProductService productService;
 
 
+//    @PostMapping
+//    public ResponseEntity<ProductDto> addProduct(
+//            @RequestPart("imageFile") MultipartFile imageFile, @RequestPart("jsonProduct") ProductForm productForm) {
+//
+//        return ResponseEntity.ok(productService.addProduct(imageFile, productForm));
+//    }
+
     @PostMapping
     public ResponseEntity<ProductDto> addProduct(
-            @RequestPart("imageFile") MultipartFile imageFile, @RequestPart("jsonProduct") ProductForm productForm) {
+            @RequestParam("imageFile") MultipartFile imageFile, @RequestParam String nameSet,
+            @RequestParam String numberSet,
+            @RequestParam String complete,
+            @RequestParam String description,
+            @RequestParam String value) {
+        ProductForm productForm = new ProductForm(nameSet, Long.parseLong(numberSet), Boolean.parseBoolean(complete), description, Double.parseDouble(value));
 
         return ResponseEntity.ok(productService.addProduct(imageFile, productForm));
     }
 
     @GetMapping("/{id}")
-    public byte [] productImage(@PathVariable long id){
+    public byte[] productImage(@PathVariable long id) {
         return productService.getProductImage(id);
     }
+
     @GetMapping("/upload")
-    public void upload(){
-         productService.upload();
+    public void upload() {
+        productService.upload();
     }
 }

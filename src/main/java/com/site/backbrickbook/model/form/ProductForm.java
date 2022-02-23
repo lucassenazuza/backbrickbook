@@ -33,8 +33,6 @@ public class ProductForm {
     @Nullable
     private String description;
     @Nullable
-    private MultipartFile imageFile;
-    @Nullable
     private Double value;
 
     public Product converter(MultipartFile imageFile, ProductRepository productRepository) {
