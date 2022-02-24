@@ -39,7 +39,7 @@ public class ProductController {
 
     @PostMapping
     public ResponseEntity<ProductDto> addProduct(
-            @RequestParam("imageFile") MultipartFile imageFile, @RequestParam String nameSet,
+            @RequestParam(value = "imageFile", required = false) MultipartFile imageFile, @RequestParam String nameSet,
             @RequestParam String numberSet,
             @RequestParam String complete,
             @RequestParam String description,

@@ -1,0 +1,40 @@
+[INFO ] 2022-02-24 12:07:33.627 [restartedMain] BackbrickbookApplication - Starting BackbrickbookApplication using Java 1.8.0_291 on DESKTOP-CP7G7NU with PID 21508 (C:\Users\Lucas\Documents\codes\backbrickbook\target\classes started by Lucas in C:\Users\Lucas\Documents\codes\backbrickbook)
+[DEBUG] 2022-02-24 12:07:33.628 [restartedMain] BackbrickbookApplication - Running with Spring Boot v2.6.3, Spring v5.3.15
+[INFO ] 2022-02-24 12:07:33.629 [restartedMain] BackbrickbookApplication - No active profile set, falling back to default profiles: default
+[INFO ] 2022-02-24 12:07:35.100 [restartedMain] BackbrickbookApplication - Started BackbrickbookApplication in 1.527 seconds (JVM running for 100.268)
+[INFO ] 2022-02-24 12:07:48.132 [http-nio-8080-exec-1] Utils - Imagem Salva
+[INFO ] 2022-02-24 12:07:49.713 [http-nio-8080-exec-1] Utils - Imagem Deletada
+[INFO ] 2022-02-24 13:31:45.366 [main] BackbrickbookApplication - Iniciando...
+[INFO ] 2022-02-24 13:31:45.612 [restartedMain] BackbrickbookApplication - Iniciando...
+[INFO ] 2022-02-24 13:31:46.091 [restartedMain] BackbrickbookApplication - Starting BackbrickbookApplication using Java 1.8.0_291 on DESKTOP-CP7G7NU with PID 15704 (C:\Users\Lucas\Documents\codes\backbrickbook\target\classes started by Lucas in C:\Users\Lucas\Documents\codes\backbrickbook)
+[DEBUG] 2022-02-24 13:31:46.094 [restartedMain] BackbrickbookApplication - Running with Spring Boot v2.6.3, Spring v5.3.15
+[INFO ] 2022-02-24 13:31:46.095 [restartedMain] BackbrickbookApplication - No active profile set, falling back to default profiles: default
+[INFO ] 2022-02-24 13:31:53.022 [restartedMain] BackbrickbookApplication - Started BackbrickbookApplication in 7.403 seconds (JVM running for 8.582)
+[INFO ] 2022-02-24 13:59:28.825 [http-nio-8080-exec-10] Utils - Imagem Salva
+[INFO ] 2022-02-24 13:59:30.152 [http-nio-8080-exec-1] Utils - Imagem Salva
+[INFO ] 2022-02-24 13:59:31.262 [http-nio-8080-exec-10] Utils - Imagem Deletada
+[INFO ] 2022-02-24 13:59:31.844 [http-nio-8080-exec-1] Utils - Imagem Deletada
+[INFO ] 2022-02-24 15:14:31.782 [main] BackbrickbookApplication - Iniciando...
+[INFO ] 2022-02-24 15:14:32.100 [restartedMain] BackbrickbookApplication - Iniciando...
+[INFO ] 2022-02-24 15:14:32.864 [restartedMain] BackbrickbookApplication - Starting BackbrickbookApplication using Java 1.8.0_291 on DESKTOP-CP7G7NU with PID 9884 (C:\Users\Lucas\Documents\codes\backbrickbook\target\classes started by Lucas in C:\Users\Lucas\Documents\codes\backbrickbook)
+[DEBUG] 2022-02-24 15:14:32.869 [restartedMain] BackbrickbookApplication - Running with Spring Boot v2.6.3, Spring v5.3.15
+[INFO ] 2022-02-24 15:14:32.870 [restartedMain] BackbrickbookApplication - No active profile set, falling back to default profiles: default
+[INFO ] 2022-02-24 15:14:44.002 [restartedMain] BackbrickbookApplication - Started BackbrickbookApplication in 11.889 seconds (JVM running for 14.576)
+[INFO ] 2022-02-24 15:15:11.996 [http-nio-8080-exec-1] Utils - Imagem Salva
+[INFO ] 2022-02-24 15:15:14.833 [http-nio-8080-exec-1] Utils - Imagem Deletada
+[INFO ] 2022-02-24 15:17:48.529 [http-nio-8080-exec-3] Utils - Imagem Salva
+[INFO ] 2022-02-24 15:17:50.053 [http-nio-8080-exec-3] Utils - Imagem Deletada
+[INFO ] 2022-02-24 15:26:29.137 [http-nio-8080-exec-4] Utils - Imagem Salva
+[INFO ] 2022-02-24 15:26:30.786 [http-nio-8080-exec-4] Utils - Imagem Deletada
+[INFO ] 2022-02-24 17:16:26.139 [main] BackbrickbookApplication - Iniciando...
+[INFO ] 2022-02-24 17:16:26.655 [restartedMain] BackbrickbookApplication - Iniciando...
+[INFO ] 2022-02-24 17:16:27.731 [restartedMain] BackbrickbookApplication - Starting BackbrickbookApplication using Java 1.8.0_291 on DESKTOP-CP7G7NU with PID 23976 (C:\Users\Lucas\Documents\codes\backbrickbook\target\classes started by Lucas in C:\Users\Lucas\Documents\codes\backbrickbook)
+[DEBUG] 2022-02-24 17:16:27.736 [restartedMain] BackbrickbookApplication - Running with Spring Boot v2.6.3, Spring v5.3.15
+[INFO ] 2022-02-24 17:16:27.737 [restartedMain] BackbrickbookApplication - No active profile set, falling back to default profiles: default
+[INFO ] 2022-02-24 17:16:46.761 [restartedMain] BackbrickbookApplication - Started BackbrickbookApplication in 20.092 seconds (JVM running for 23.823)
+[INFO ] 2022-02-24 17:27:18.211 [main] BackbrickbookApplication - Iniciando...
+[INFO ] 2022-02-24 17:27:18.600 [restartedMain] BackbrickbookApplication - Iniciando...
+[INFO ] 2022-02-24 17:27:19.163 [restartedMain] BackbrickbookApplication - Starting BackbrickbookApplication using Java 1.8.0_291 on DESKTOP-CP7G7NU with PID 24904 (C:\Users\Lucas\Documents\codes\backbrickbook\target\classes started by Lucas in C:\Users\Lucas\Documents\codes\backbrickbook)
+[DEBUG] 2022-02-24 17:27:19.167 [restartedMain] BackbrickbookApplication - Running with Spring Boot v2.6.3, Spring v5.3.15
+[INFO ] 2022-02-24 17:27:19.168 [restartedMain] BackbrickbookApplication - No active profile set, falling back to default profiles: default
+[INFO ] 2022-02-24 17:27:32.387 [restartedMain] BackbrickbookApplication - Started BackbrickbookApplication in 13.778 seconds (JVM running for 15.474)

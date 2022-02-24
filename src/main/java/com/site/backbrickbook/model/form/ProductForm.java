@@ -35,6 +35,8 @@ public class ProductForm {
     @Nullable
     private Double value;
 
+
+
     public Product converter(MultipartFile imageFile, ProductRepository productRepository) {
         Product product = new Product();
         String nameFile;
@@ -49,7 +51,7 @@ public class ProductForm {
         product.setValue(this.value);
         productRepository.save(product);
 
-        nameFile = "id_" + product.getId() + "_" + timeStamp;
+        nameFile = "id_" + product.getId() + "_" + timeStamp + ".jpg";
         try {
             if (imageFile != null) {
                 path_file = util.saveImage(imageFile, nameFile);
@@ -63,11 +65,14 @@ public class ProductForm {
 
         String driver_image_folder = BatchConfiguration.getProperty("app.drive-folder");
         File googleFile = createGoogleFile(driver_image_folder, "image/jpg", nameFile, uploadFile);
+
+        util.deleteImage(imageFile, nameFile);
             }
         } catch (Exception exception) {
             System.out.println("erro...");
 
         }
+
         return product;
     }
 }
