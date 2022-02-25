@@ -4,6 +4,7 @@ import com.google.api.services.drive.model.File;
 import com.site.backbrickbook.config.BatchConfiguration;
 import com.site.backbrickbook.model.Product;
 import com.site.backbrickbook.repository.ProductRepository;
+import com.site.backbrickbook.service.ProductService;
 import com.site.backbrickbook.utils.Utils;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -35,7 +36,7 @@ public class ProductForm {
     @Nullable
     private Double value;
 
-
+    private final Logger LOGGER = Logger.getLogger( ProductForm.class.getName() );
 
     public Product converter(MultipartFile imageFile, ProductRepository productRepository) {
         Product product = new Product();
@@ -59,7 +60,7 @@ public class ProductForm {
 
         product.setFile_name(nameFile);
 
-        System.out.println("Fazendo upload");
+        LOGGER.info("Fazendo upload");
 
         java.io.File uploadFile = new java.io.File(path_file.toString());
 

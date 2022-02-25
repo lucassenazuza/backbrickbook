@@ -1,8 +1,10 @@
 package com.site.backbrickbook.service;
 
 import com.google.api.services.drive.model.File;
+import com.site.backbrickbook.controller.AuthenticationController;
 import com.site.backbrickbook.model.Product;
 import com.site.backbrickbook.model.dto.ProductDto;
+import com.site.backbrickbook.model.dto.ProductImageDTO;
 import com.site.backbrickbook.model.form.ProductForm;
 import com.site.backbrickbook.repository.ProductRepository;
 import org.apache.tomcat.util.codec.binary.Base64;
@@ -17,6 +19,7 @@ import java.awt.*;
 import static com.site.backbrickbook.drive.CreateGoogleFile.createGoogleFile;
 import java.io.FileInputStream;
 import java.nio.charset.StandardCharsets;
+import java.util.logging.Logger;
 
 
 @Service
@@ -26,6 +29,18 @@ public class ProductService {
     @Autowired
     Environment environment;
 
+    private final Logger LOGGER = Logger.getLogger( ProductService.class.getName() );
+
+
+    public ProductImageDTO getProduct(String numberSet){
+
+        Product product = productRepository.findbyNumberSet(numberSet);
+        ProductImageDTO productImageDTO = new ProductImageDTO();
+        MultipartFile multipartFile;
+        productImageDTO.create(product, multipartFile);
+
+        return product;
+    }
     public ProductDto addProduct(MultipartFile imageFile, ProductForm productForm) {
 
         Product product = productForm.converter(imageFile, productRepository);
@@ -49,12 +64,13 @@ public class ProductService {
         try {
             File googleFile = createGoogleFile("1MrM8F9sZ6si3IDxEkSeMc-5AFxKh7tMB", "image/jpeg", "teste.png", uploadFile);
 
-            System.out.println("Created Google file!");
-            System.out.println("WebContentLink: " + googleFile.getWebContentLink());
-            System.out.println("WebViewLink: " + googleFile.getWebViewLink());
+            LOGGER.info("Created Google file!");
+            LOGGER.info("WebContentLink: " + googleFile.getWebContentLink());
+            LOGGER.info("WebViewLink: " + googleFile.getWebViewLink());
 
             System.out.println("Done!");
         }catch (Exception ex){
+            LOGGER.severe("Error...");
 
         }
     }

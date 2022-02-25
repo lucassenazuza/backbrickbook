@@ -29,14 +29,6 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
-
-//    @PostMapping
-//    public ResponseEntity<ProductDto> addProduct(
-//            @RequestPart("imageFile") MultipartFile imageFile, @RequestPart("jsonProduct") ProductForm productForm) {
-//
-//        return ResponseEntity.ok(productService.addProduct(imageFile, productForm));
-//    }
-
     @PostMapping
     public ResponseEntity<ProductDto> addProduct(
             @RequestParam(value = "imageFile", required = false) MultipartFile imageFile, @RequestParam String nameSet,
