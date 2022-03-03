@@ -17,7 +17,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.logging.Logger;
+//import java.util.logging.Logger;
 
 import static com.site.backbrickbook.drive.CreateGoogleFile.createGoogleFile;
 
@@ -28,7 +28,7 @@ public class ProductForm {
 
     @Nullable
     private String nameSet;
-    private long numberSet;
+    private String numberSet;
     @Nullable
     private Boolean complete;
     @Nullable
@@ -36,7 +36,7 @@ public class ProductForm {
     @Nullable
     private Double value;
 
-    private final Logger LOGGER = Logger.getLogger( ProductForm.class.getName() );
+//    private final Logger LOGGER = Logger.getLogger( ProductForm.class.getName() );
 
     public Product converter(MultipartFile imageFile, ProductRepository productRepository) {
         Product product = new Product();
@@ -60,7 +60,7 @@ public class ProductForm {
 
         product.setFile_name(nameFile);
 
-        LOGGER.info("Fazendo upload");
+//        LOGGER.info("Fazendo upload");
 
         java.io.File uploadFile = new java.io.File(path_file.toString());
 

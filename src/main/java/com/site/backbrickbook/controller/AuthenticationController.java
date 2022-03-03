@@ -11,13 +11,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.logging.Logger;
+
 
 
 @CrossOrigin
 @RestController
 public class AuthenticationController {
-    private static final Logger LOGGER = Logger.getLogger( AuthenticationController.class.getName() );
+//    private static final Logger LOGGER = Logger.getLogger( AuthenticationController.class.getName() );
     private UserAuthenticationService userAuthenticationService;
 
     @Autowired
@@ -32,7 +32,7 @@ public class AuthenticationController {
 
     @PostMapping("/signin")
     public ResponseEntity<UserAutheticatedDTO> autenticar(@RequestBody DadosLogin dadosLogin){
-        LOGGER.info("Logando usuario");
+//        LOGGER.info("Logando usuario");
         UserSystem userSystem = userAuthenticationService.authenticate(dadosLogin);
         return new ResponseEntity<UserAutheticatedDTO>(UserAutheticatedDTO.toDTO(userSystem, "Bearer "), HttpStatus.ACCEPTED);
     }

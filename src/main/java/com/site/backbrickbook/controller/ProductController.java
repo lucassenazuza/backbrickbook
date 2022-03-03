@@ -2,6 +2,7 @@ package com.site.backbrickbook.controller;
 
 import com.site.backbrickbook.model.Product;
 import com.site.backbrickbook.model.dto.ProductDto;
+import com.site.backbrickbook.model.dto.ProductImageDTO;
 import com.site.backbrickbook.model.form.ProductForm;
 import com.site.backbrickbook.service.ProductService;
 import com.sun.org.apache.xpath.internal.operations.Bool;
@@ -36,18 +37,23 @@ public class ProductController {
             @RequestParam String complete,
             @RequestParam String description,
             @RequestParam String value) {
-        ProductForm productForm = new ProductForm(nameSet, Long.parseLong(numberSet), Boolean.parseBoolean(complete), description, Double.parseDouble(value));
+        ProductForm productForm = new ProductForm(nameSet, numberSet, Boolean.parseBoolean(complete), description, Double.parseDouble(value));
 
         return ResponseEntity.ok(productService.addProduct(imageFile, productForm));
     }
 
-    @GetMapping("/{id}")
-    public byte[] productImage(@PathVariable long id) {
-        return productService.getProductImage(id);
-    }
+//    @GetMapping("/{id}")
+//    public byte[] productImage(@PathVariable long id) {
+//        return productService.getProductImage(id);
+//    }
 
-    @GetMapping("/upload")
-    public void upload() {
-        productService.upload();
-    }
+//    @GetMapping("/test")
+//    public ProductImageDTO getProduct(){
+//        return productService.getProduct();
+//    }
+
+//    @GetMapping("/upload")
+//    public void upload() {
+//        productService.upload();
+//    }
 }

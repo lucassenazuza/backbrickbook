@@ -16,7 +16,7 @@ public class ProductDto {
 
     private long id;
     private String nameSet;
-    private long numberSet;
+    private String numberSet;
     private Boolean complete;
 
 }

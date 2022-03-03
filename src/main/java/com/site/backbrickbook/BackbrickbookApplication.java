@@ -1,8 +1,6 @@
 package com.site.backbrickbook;
 
-import com.site.backbrickbook.utils.Utils;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,9 +8,9 @@ import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfi
 
 @SpringBootApplication
 public class BackbrickbookApplication {
-	private static Logger logger = LogManager.getLogger(BackbrickbookApplication.class);
+//	private static Logger logger = LogManager.getLogger(BackbrickbookApplication.class);
 	public static void main(String[] args) {
-		logger.info("Iniciando...");
+//		logger.info("Iniciando...");
 		SpringApplication.run(BackbrickbookApplication.class, args);
 	}
 

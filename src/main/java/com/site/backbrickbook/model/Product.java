@@ -25,7 +25,7 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String nameSet;
-    private long numberSet;
+    private String numberSet;
     private Boolean complete;
     private String description;
     private Double value;
