@@ -38,3 +38,10 @@
 [DEBUG] 2022-02-24 17:27:19.167 [restartedMain] BackbrickbookApplication - Running with Spring Boot v2.6.3, Spring v5.3.15
 [INFO ] 2022-02-24 17:27:19.168 [restartedMain] BackbrickbookApplication - No active profile set, falling back to default profiles: default
 [INFO ] 2022-02-24 17:27:32.387 [restartedMain] BackbrickbookApplication - Started BackbrickbookApplication in 13.778 seconds (JVM running for 15.474)
+[INFO ] 2022-03-05 15:13:55.155 [main] BackbrickbookApplication - Iniciando...
+[INFO ] 2022-03-05 15:13:55.542 [restartedMain] BackbrickbookApplication - Iniciando...
+[INFO ] 2022-03-05 15:13:56.547 [restartedMain] BackbrickbookApplication - Starting BackbrickbookApplication using Java 1.8.0_312 on lucas-300E5M-300E5L with PID 12537 (/home/lucas/codes/backbrickbook/target/classes started by lucas in /home/lucas/codes/backbrickbook)
+[DEBUG] 2022-03-05 15:13:56.551 [restartedMain] BackbrickbookApplication - Running with Spring Boot v2.6.3, Spring v5.3.15
+[INFO ] 2022-03-05 15:13:56.552 [restartedMain] BackbrickbookApplication - No active profile set, falling back to default profiles: default
+[INFO ] 2022-03-05 15:14:09.378 [restartedMain] BackbrickbookApplication - Started BackbrickbookApplication in 13.814 seconds (JVM running for 16.911)
+[INFO ] 2022-03-05 15:18:20.373 [http-nio-8080-exec-9] Utils - Imagem Salva
