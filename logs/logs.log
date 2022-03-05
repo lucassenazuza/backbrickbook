@@ -45,3 +45,4 @@
 [INFO ] 2022-03-05 15:13:56.552 [restartedMain] BackbrickbookApplication - No active profile set, falling back to default profiles: default
 [INFO ] 2022-03-05 15:14:09.378 [restartedMain] BackbrickbookApplication - Started BackbrickbookApplication in 13.814 seconds (JVM running for 16.911)
 [INFO ] 2022-03-05 15:18:20.373 [http-nio-8080-exec-9] Utils - Imagem Salva
+[INFO ] 2022-03-05 15:19:57.033 [http-nio-8080-exec-2] Utils - Imagem Salva
