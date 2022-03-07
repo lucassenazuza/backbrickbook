@@ -4,12 +4,16 @@ package com.site.backbrickbook.utils;
 import com.site.backbrickbook.config.BatchConfiguration;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 
 public class Utils {
@@ -23,13 +27,14 @@ public class Utils {
             file.mkdirs();
         }
     }
-    public void deleteImage(MultipartFile imageFile, String nameFile) throws IOException {
+    public void deleteImage(String nameFile) throws IOException {
         Path folder = Paths.get(System.getProperty("user.dir"), "images_to_upload");
         Path path = Paths.get(folder + "\\" + nameFile);
-        Files.delete(path);
+        File deleteFile = new File(path.toString());
+        deleteFile.delete();
 //        logger.info("Imagem Deletada");
     }
-    public Path saveImage(MultipartFile imageFile, String nameFile) throws IOException {
+    public Path saveImage(MultipartFile imageFile, String nameFile) throws IOException, InterruptedException {
 
 
 //        String folder = BatchConfiguration.getProperty("app.path-images");
@@ -37,7 +42,28 @@ public class Utils {
         checkDir(folder.toString());
         byte[] bytes = imageFile.getBytes();
         Path path = Paths.get(folder + "\\" + nameFile);
-        Files.write(path, bytes);
+        try (OutputStream out = new BufferedOutputStream(
+                Files.newOutputStream(path))) {
+            out.write(bytes, 0, bytes.length);
+            out.close();
+            out.flush();
+
+        } catch (IOException x) {
+            System.err.println(x);
+        }
+        List listFiles = new ArrayList();
+        listFiles = Arrays.asList(new File(folder.toString()).list());
+        while(!listFiles.contains(nameFile)){
+            Thread.sleep(1000);
+            System.out.println("Aguardando escrever arquivos");
+        }
+//        Path path = Paths.get(folder + "\\" + nameFile);
+//        File newFile = new File(path.toString());
+//        Files.write(bytes, newFile);
+//        while(!newFile.exists()){
+//            Thread.sleep(2000);
+//            System.out.println("Esperando arquivo ser gravado");
+//        }
 //        logger.info("Imagem Salva");
         return path;
     }

@@ -65,13 +65,14 @@ public class ProductForm {
         java.io.File uploadFile = new java.io.File(path_file.toString());
 
         String driver_image_folder = BatchConfiguration.getProperty("app.drive-folder");
+
         File googleFile = createGoogleFile(driver_image_folder, "image/jpg", nameFile, uploadFile);
 
-        util.deleteImage(imageFile, nameFile);
+        util.deleteImage(nameFile);
             }
         } catch (Exception exception) {
             System.out.println("erro...");
-
+            System.out.println(String.format("Exception: %s", exception.toString()));
         }
 
         return product;

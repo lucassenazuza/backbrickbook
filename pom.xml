@@ -91,6 +91,11 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.7</version>
+        </dependency>
+        <dependency>
             <groupId>net.minidev</groupId>
             <artifactId>json-smart</artifactId>
         </dependency>

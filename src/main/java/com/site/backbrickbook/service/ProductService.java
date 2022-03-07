@@ -83,20 +83,20 @@ public class ProductService {
     }
 
     public void upload() {
-        java.io.File uploadFile = new java.io.File("C:\\Users\\Lucas\\Downloads\\lego_imperial.png");
+//        java.io.File uploadFile = new java.io.File("C:\\Users\\Lucas\\Downloads\\lego_imperial.png");
+//
+//        // Create Google File:
+//        try {
+//            File googleFile = createGoogleFile("image/jpeg", "teste.png", uploadFile);
+//
+////            LOGGER.info("Created Google file!");
+////            LOGGER.info("WebContentLink: " + googleFile.getWebContentLink());
+////            LOGGER.info("WebViewLink: " + googleFile.getWebViewLink());
+//
+//            System.out.println("Done!");
+//        }catch (Exception ex){
+////            LOGGER.severe("Error...");
 
-        // Create Google File:
-        try {
-            File googleFile = createGoogleFile("1MrM8F9sZ6si3IDxEkSeMc-5AFxKh7tMB", "image/jpeg", "teste.png", uploadFile);
 
-//            LOGGER.info("Created Google file!");
-//            LOGGER.info("WebContentLink: " + googleFile.getWebContentLink());
-//            LOGGER.info("WebViewLink: " + googleFile.getWebViewLink());
-
-            System.out.println("Done!");
-        }catch (Exception ex){
-//            LOGGER.severe("Error...");
-
-        }
     }
 }
