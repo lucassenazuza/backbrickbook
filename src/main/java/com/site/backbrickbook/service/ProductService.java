@@ -20,10 +20,14 @@ import sun.misc.IOUtils;
 import java.awt.*;
 
 import static com.site.backbrickbook.drive.CreateGoogleFile.createGoogleFile;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
-
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 
 @Service
@@ -36,7 +40,7 @@ public class ProductService {
 //    private final Logger LOGGER = Logger.getLogger( ProductService.class.getName() );
 
 
-//    public ProductImageDTO getProduct(){
+    //    public ProductImageDTO getProduct(){
 //        String numberSet= "234234";
 //        Product product = productRepository.findbyNumberSet(numberSet);
 //        ProductImageDTO productImageDTO = new ProductImageDTO();
@@ -77,7 +81,7 @@ public class ProductService {
     public byte[] getProductImage(long id) {
 
         String product_pic = productRepository.getById(id).getFile_name().toString();
-        product_pic = product_pic.replaceFirst("^data:image/[^;]*;base64,?","");
+        product_pic = product_pic.replaceFirst("^data:image/[^;]*;base64,?", "");
         byte[] bytes = javax.xml.bind.DatatypeConverter.parseBase64Binary(product_pic);
         return bytes;
     }
@@ -98,5 +102,16 @@ public class ProductService {
 ////            LOGGER.severe("Error...");
 
 
+    }
+
+    public ProductDto getProduct(String numberSet) {
+        List<Product> listProducts = new ArrayList<Product>();
+        listProducts = productRepository.findByNumberSet(numberSet);
+        List<ProductDto> listProductDto = new ArrayList<>();
+        listProductDto = listProducts.stream().map(prod ->
+            prod.converte()
+        ).collect(Collectors.toList());
+
+        return listProductDto.size() > 0 ? listProductDto.get(0): null;
     }
 }

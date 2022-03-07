@@ -42,18 +42,10 @@ public class ProductController {
         return ResponseEntity.ok(productService.addProduct(imageFile, productForm));
     }
 
-//    @GetMapping("/{id}")
-//    public byte[] productImage(@PathVariable long id) {
-//        return productService.getProductImage(id);
-//    }
+    @GetMapping("/{numberSet}")
+    public ResponseEntity<ProductDto> getProduct(@PathVariable String numberSet){
 
-//    @GetMapping("/test")
-//    public ProductImageDTO getProduct(){
-//        return productService.getProduct();
-//    }
+        return ResponseEntity.ok(productService.getProduct(numberSet));
+    }
 
-//    @GetMapping("/upload")
-//    public void upload() {
-//        productService.upload();
-//    }
 }
