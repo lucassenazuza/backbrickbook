@@ -1,5 +1,8 @@
 package com.site.backbrickbook.service;
 
+import com.google.api.services.drive.Drive;
+import com.google.api.services.drive.model.FileList;
+import com.site.backbrickbook.drive.GoogleDriveUtils;
 import com.site.backbrickbook.model.Image;
 import com.site.backbrickbook.repository.ImageRepository;
 import org.apache.tomcat.util.codec.binary.Base64;
@@ -27,5 +30,24 @@ public class ImageService {
         Path path = Paths.get(folder + imageFile.getOriginalFilename());
         Files.write(path, bytes);
         return ResponseEntity.ok().build();
+    }
+
+    public Object getImage(String image_drive_id) throws IOException{
+        String pageToken = null;
+        Drive driveService = GoogleDriveUtils.getDriveService();
+        do {
+            FileList result = driveService.files().list()
+                    .setQ("mimeType='image/jpeg'")
+                    .setSpaces("drive")
+                    .setFields("nextPageToken, files(id, name)")
+                    .setPageToken(pageToken)
+                    .execute();
+            for (File file : result.getFiles()) {
+                System.out.printf("Found file: %s (%s)\n",
+                        file.getName(), file.getId());
+            }
+            pageToken = result.getNextPageToken();
+        } while (pageToken != null);
+    return null;
     }
 }

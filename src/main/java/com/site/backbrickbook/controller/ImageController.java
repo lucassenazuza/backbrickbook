@@ -28,4 +28,10 @@ public class ImageController {
         return ResponseEntity.ok().build();
     }
 
+    @GetMapping("/{image_drive_id}")
+    public ResponseEntity<?> getImage(@PathVariable String image_drive_id){
+
+        return ResponseEntity.ok(imageService.getImage(image_drive_id));
+    }
+
 }
