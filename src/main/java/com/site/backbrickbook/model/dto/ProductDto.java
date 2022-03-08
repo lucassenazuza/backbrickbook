@@ -18,7 +18,9 @@ public class ProductDto {
     private String nameSet;
     private String numberSet;
     private Boolean complete;
-
+    private String Description;
+    private Double value;
+    private String linkImage;
 }
 
 

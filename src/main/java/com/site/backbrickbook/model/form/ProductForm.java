@@ -67,8 +67,10 @@ public class ProductForm {
         String driver_image_folder = BatchConfiguration.getProperty("app.drive-folder");
 
         File googleFile = createGoogleFile(driver_image_folder, "image/jpg", nameFile, uploadFile);
-
+        String webContentLink = googleFile.getId();
         util.deleteImage(nameFile);
+
+        product.setLinkImage(webContentLink);
             }
         } catch (Exception exception) {
             System.out.println("erro...");

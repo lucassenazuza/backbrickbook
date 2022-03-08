@@ -18,6 +18,7 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.stream.Collectors;
 
 @Service
 public class ImageService {
@@ -42,12 +43,13 @@ public class ImageService {
                     .setFields("nextPageToken, files(id, name)")
                     .setPageToken(pageToken)
                     .execute();
-            for (File file : result.getFiles()) {
-                System.out.printf("Found file: %s (%s)\n",
+            result.getFiles().stream().map( file -> {
+                return System.out.printf("Found file: %s (%s)\n",
                         file.getName(), file.getId());
-            }
+            });
             pageToken = result.getNextPageToken();
         } while (pageToken != null);
+
     return null;
     }
 }

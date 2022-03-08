@@ -29,6 +29,7 @@ public class Product {
     private Boolean complete;
     private String description;
     private Double value;
+    private String linkImage;
     LocalDateTime dateInsertion = LocalDateTime.now();
     @Nullable
     LocalDateTime dateLastUpdate;
@@ -36,7 +37,8 @@ public class Product {
     @Nullable
     private String file_name;
     public ProductDto converte(){
-        return new ProductDto(this.id, this.nameSet, this.numberSet, this.complete);
+        return new ProductDto(this.id, this.nameSet, this.numberSet, this.complete, this.description, this.value, this.linkImage);
+
     }
 
 

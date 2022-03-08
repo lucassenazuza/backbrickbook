@@ -31,7 +31,12 @@ public class ImageController {
     @GetMapping("/{image_drive_id}")
     public ResponseEntity<?> getImage(@PathVariable String image_drive_id){
 
-        return ResponseEntity.ok(imageService.getImage(image_drive_id));
+        try {
+            return ResponseEntity.ok(imageService.getImage(image_drive_id));
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
 }
